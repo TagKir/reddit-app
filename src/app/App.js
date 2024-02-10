@@ -1,16 +1,18 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
+import logo from "../logo.png";
+// components
+import SearchBar from "./search/searchBar";
 
 function App() {
-  const dispatch = useDispatch();
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>
-          Reddit App <span className="tagirkiky">by tagirkiky</span>
-        </h1>
+      <header>
+        <img src={logo} className="logo" alt="reddit-logo" />
+        <span className="by">by tagirkiky</span>
       </header>
+      <SearchBar />
     </div>
   );
 }
