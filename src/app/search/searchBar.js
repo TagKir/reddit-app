@@ -1,12 +1,13 @@
 import React from "react";
+import "./searchBar.css";
 
-function searchBar() {
+function SearchBar() {
   return (
     <form>
-      <input />
-      <input type="submit" />
+      <input className="search" placeholder="Search any post" />
+      <input className="submit" type="submit" hidden />
     </form>
   );
 }
 
-export default searchBar;
+export default SearchBar;
