@@ -1,14 +1,15 @@
 .App {
   text-align: center;
   font-family: "Verdana";
+  background-color: whitesmoke;
 }
 
 header {
   display: inline-flex;
-  border: 1px solid black;
   align-items: center;
   width: 100%;
-  box-shadow: 1px 1px 6px 1px slategray;
+  box-shadow: 0 0 10px 1px slategray;
+  background-color: white;
 }
 .searchbar {
   width: 100%;

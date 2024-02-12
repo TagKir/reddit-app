@@ -1,3 +1,49 @@
+li {
+  list-style: none;
+}
+
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  justify-content: center;
+}
+
 .post {
   width: 80%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid black;
+  margin: 10px;
+  max-width: 500px;
+}
+
+.post .rating {
+  width: 15%;
+  text-align: center;
+}
+.post .rating ul {
+  padding-left: 0;
+  margin-left: 20px;
+}
+
+.post .main_inf {
+  width: 85%;
+}
+.post .main_inf .title {
+  margin-top: 25px;
+}
+.post .main_inf img {
+  width: 80%;
+  max-width: 300px;
+}
+
+.post .nonmain_inf {
+  display: flex;
+}
+
+.post p {
+  margin: 0 15px 25px 15px;
 }

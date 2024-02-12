@@ -17,17 +17,21 @@ function Posts() {
               <li>↓</li>
             </ul>
           </div>
+
+          <br />
+
           <div className="main_inf">
             <h2 className="title">{post.title}</h2>
-            <img src={post.image_url} />
+            <img src={require("../../store/460213.jpeg")} />
           </div>
+
           <div className="nonmain_inf">
-            <p className="author">
-              posted by <a>{post.author.username}</a>
-              {/* Здесь будет React Router */}
+            <p>
+              posted by{" "}
+              <a href="http://randomcolour.com">{post.author.username}</a>
             </p>
-            <p className="time">1 hour age</p>
-            {/* Здесь должна быть картинка коммента */}
+            <p> 1 hour age</p>
+            {/* Здесь рисунок комента */}
             <p>{post.comments.length}</p>
           </div>
         </div>
