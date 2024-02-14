@@ -8,8 +8,8 @@ import {
 import styles from "./App.module.css";
 import logo from "../logo.png";
 // components
-import SearchBar from "./search/searchBar";
-import Posts from "./posts/posts";
+import SearchBar from "./search_work/searchBar";
+import Posts from "./posts_work/posts";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

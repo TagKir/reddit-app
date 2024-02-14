@@ -1,0 +1,58 @@
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: orangered;
+}
+a:hover {
+  color: orange;
+}
+
+.post {
+  width: 80%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  max-width: 500px;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 0 10px 0.5px rgb(148, 151, 154);
+  border-radius: 8px;
+  margin: 10px;
+}
+
+.post .top {
+  display: grid;
+  grid-template-columns: 60px auto;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+}
+.post .top .rating {
+  padding-left: 0;
+}
+.post .top .arrow:hover {
+  color: dimgray;
+}
+.post .top .title {
+  margin-right: 20px;
+}
+.post .shrek {
+  width: 80%;
+  max-width: 300px;
+}
+
+.post .nonmain_inf {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 3fr 2fr 1fr;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.post .nonmain_inf .comments {
+  display: flex;
+  align-items: center;
+}
+.post .nonmain_inf .comments p {
+  padding-left: 5px;
+}

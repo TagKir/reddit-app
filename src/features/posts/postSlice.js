@@ -4,11 +4,7 @@ import { test_data } from "../../store/test-data";
 export const postSlice = createSlice({
   name: "posts",
   initialState: test_data,
-  reducers: {
-    addPosts(state, action) {
-      state = action.payload;
-    },
-  },
+  extraReducers: {},
 });
 
 export const { addPost } = postSlice.actions;

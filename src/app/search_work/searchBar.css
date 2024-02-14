@@ -1,0 +1,15 @@
+.search {
+  width: 80%;
+  font-size: 28px;
+  border: 1.5px solid dimgray;
+  border-radius: 5px;
+}
+::placeholder {
+  color: dimgray;
+}
+.search:hover::placeholder {
+  color: darkgray;
+}
+.search:focus::placeholder {
+  color: gainsboro;
+}
