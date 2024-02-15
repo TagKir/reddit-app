@@ -1,3 +1,7 @@
-function searchPosts(string) {
-  fetch("https://www.reddit.com/search?q=cake%20recipes");
+import { createAsyncThunk } from "@reduxjs/toolkit";
+
+export async function popular() {
+  const response = await fetch("https://www.reddit.com/r/popular.json");
+  const answer = await response.json();
+  return answer.data.children;
 }

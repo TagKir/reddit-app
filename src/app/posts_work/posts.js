@@ -12,7 +12,7 @@ function Posts() {
   return (
     <div className="posts">
       {posts.map((postInfo) => (
-        <Post post={postInfo} />
+        <Post post={postInfo.data} key={postInfo.data.id} />
       ))}
     </div>
   );

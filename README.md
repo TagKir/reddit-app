@@ -4,7 +4,5 @@ posts.js - reddit json api
 posts_print.js - react router и ссылки
 post_info.js - react router и доп инфа о комментариях
 
-Подготовка к reddit api
-///
 reddit api
 комментарии
