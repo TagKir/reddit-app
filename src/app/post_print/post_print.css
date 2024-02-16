@@ -11,14 +11,13 @@ a:hover {
 
 .post {
   width: 80%;
-  display: inline-flex;
-  flex-wrap: wrap;
-  max-width: 500px;
+  max-width: 1000px;
+
   justify-content: center;
   background-color: white;
   box-shadow: 0 0 10px 0.5px rgb(148, 151, 154);
   border-radius: 8px;
-  margin: 10px;
+  margin: 20px;
 }
 
 .post .top {
@@ -34,12 +33,15 @@ a:hover {
 .post .top .arrow:hover {
   color: dimgray;
 }
-.post .top .title {
+.post .top .title,
+.post .top .main_title {
   margin-right: 20px;
+}
+.post .top .main_title {
+  padding-top: 10px;
 }
 .post .shrek {
   width: 80%;
-  max-width: 300px;
 }
 
 .post .nonmain_inf {
@@ -47,6 +49,7 @@ a:hover {
   display: grid;
   grid-template-columns: 3fr 2fr 1fr;
   align-items: center;
+  justify-items: center;
   padding-bottom: 10px;
 }
 .post .nonmain_inf .comments {
