@@ -1,17 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { test_data } from "../../store/test-data";
-import { popular } from "../../app/reddit_soft/reddit_soft.js";
+import { popular, searchPosts } from "../reddit/reddit_soft.js";
 
 export const postSlice = createSlice({
   name: "posts",
-  initialState: await popular(),
+  initialState: [],
   reducers: {},
-  extraReducers: {
-    [popular.fulfilled]: (state, action) => {
-      return action.payload.data;
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(popular.fulfilled, (state, action) => {
+        return action.payload;
+      })
+      .addCase(searchPosts.fulfilled, (state, action) => {
+        return action.payload;
+      });
   },
 });
 
 export const selectPosts = (state) => state.posts;
+
 export default postSlice.reducer;

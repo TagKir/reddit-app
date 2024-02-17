@@ -12,8 +12,6 @@ a:hover {
 .post {
   width: 80%;
   max-width: 1000px;
-
-  justify-content: center;
   background-color: white;
   box-shadow: 0 0 10px 0.5px rgb(148, 151, 154);
   border-radius: 8px;
@@ -47,6 +45,7 @@ a:hover {
 .post .nonmain_inf {
   width: 90%;
   display: grid;
+  margin: auto;
   grid-template-columns: 3fr 2fr 1fr;
   align-items: center;
   justify-items: center;
