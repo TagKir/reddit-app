@@ -1,4 +1,4 @@
 ## Сначала reddit json api - только потом комментарии и возможно авторы
 
-\reddit api
-комментарии
+hover и active для постов
+postPage_print

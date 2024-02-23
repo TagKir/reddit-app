@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import "./searchBar.css";
-import { searchPosts } from "../../features/reddit/reddit_soft";
+import { popular, searchPosts } from "../../features/reddit/reddit_soft";
 
 function SearchBar() {
   const [search, setSearch] = useState("");
@@ -11,7 +11,8 @@ function SearchBar() {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        dispatch(searchPosts(search));
+        if (search) dispatch(searchPosts(search));
+        else dispatch(popular());
       }}
     >
       <input

@@ -6,40 +6,52 @@ import {
   Route,
 } from "react-router-dom";
 import styles from "./App.module.css";
-import logo from "../logo.png";
+import { useDispatch } from "react-redux";
+
 // components
-import SearchBar from "./search_work/searchBar";
-import Posts from "./posts_work/posts";
+import Posts from "./posts/posts_work/posts_work";
+import Header from "./header/header";
+import PostPage from "./posts/postPage_work/postPage";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route
-      path="/"
-      element={
-        <div className={styles.App}>
-          <header>
-            <img src={logo} className={styles.logo} alt="reddit-logo" />
-            <div className={styles.searchbar}>
-              <SearchBar />
-            </div>
-          </header>
-
-          <Posts />
-        </div>
-      }
-    >
-      <Route
-        path=":hell"
-        element={
-          <div>{/* ТУТ будет компонент с постом(одним) и/или автором */}</div>
-        }
-      ></Route>
-    </Route>
-  )
-);
+// soft
+import { popular } from "../features/reddit/reddit_soft";
 
 function App() {
-  return <RouterProvider router={router} className={styles.App} />;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(popular());
+  }, [dispatch]);
+
+  return (
+    <RouterProvider
+      router={createBrowserRouter(
+        createRoutesFromElements(
+          <Route path="/">
+            <Route
+              index
+              element={
+                <div className={styles.App}>
+                  <Header />
+                  <Posts />
+                </div>
+              }
+            />
+            <Route
+              path="/:postId"
+              element={
+                <div className={styles.App}>
+                  <Header />
+                  <PostPage />
+                </div>
+              }
+            />
+          </Route>
+        )
+      )}
+      className={styles.App}
+    />
+  );
 }
 
 export default App;

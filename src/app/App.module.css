@@ -5,22 +5,6 @@
   min-height: 100vh;
 }
 
-header {
-  display: inline-flex;
-  align-items: center;
-  width: 100%;
-  box-shadow: 0 0 10px 1px slategray;
-  background-color: white;
-}
-.searchbar {
-  width: 100%;
-  margin-left: auto;
-}
-.logo {
-  width: 20vw;
-  margin-left: 20px;
-}
-
 @media (orientation: landscape) {
   .logo {
     width: 10vw;

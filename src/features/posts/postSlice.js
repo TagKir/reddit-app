@@ -10,6 +10,9 @@ export const postSlice = createSlice({
       .addCase(popular.fulfilled, (state, action) => {
         return action.payload;
       })
+      .addCase(searchPosts.pending, (state) => {
+        return "";
+      })
       .addCase(searchPosts.fulfilled, (state, action) => {
         return action.payload;
       });
