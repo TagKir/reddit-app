@@ -1,10 +1,14 @@
 .postPage {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   margin-top: 20px;
-  justify-content: center;
+  justify-items: center;
 }
 .loading {
   font-size: 40px;
   padding-top: 20px;
+}
+
+.back {
+  width: 70px;
+  height: 30px;
 }

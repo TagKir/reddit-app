@@ -17,6 +17,9 @@ a:hover {
   border-radius: 8px;
   margin: 20px;
 }
+.notsolo:hover {
+  background-color: rgb(240, 240, 240);
+}
 
 .post .top {
   display: grid;

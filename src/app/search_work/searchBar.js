@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import "./searchBar.css";
 import { popular, searchPosts } from "../../features/reddit/reddit_soft";
+import { useNavigate } from "react-router-dom";
 
 function SearchBar() {
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <form
@@ -13,6 +15,7 @@ function SearchBar() {
         e.preventDefault();
         if (search) dispatch(searchPosts(search));
         else dispatch(popular());
+        navigate("/");
       }}
     >
       <input

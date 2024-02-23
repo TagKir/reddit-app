@@ -1,5 +1,5 @@
 import React from "react";
-import { selectPosts } from "../../../features/posts/postSlice";
+import { selectPosts } from "../../../store/postSlice";
 import { useSelector } from "react-redux";
 import "./posts_work.css";
 
@@ -16,7 +16,7 @@ function Posts() {
   return (
     <div className="posts">
       {posts.map((postInfo) => (
-        <Post post={postInfo.data} key={postInfo.data.id} />
+        <Post post={postInfo.data} situation="lots" key={postInfo.data.id} />
       ))}
     </div>
   );

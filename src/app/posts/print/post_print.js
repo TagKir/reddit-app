@@ -3,17 +3,16 @@ import { useNavigate } from "react-router-dom";
 import "./post_print.css";
 import { calculateDifference } from "../../../features/soft/soft";
 
-export default function Post({ post }) {
+export default function Post({ post, situation }) {
   const imageUrlRegex = /\.(jpeg|jpg|gif|png)$/i;
   const navigate = useNavigate();
 
+  const onClick = (e) => {
+    navigate(post.id);
+  };
+
   return (
-    <div
-      className="post"
-      onClick={(e) => {
-        navigate(post.id);
-      }}
-    >
+    <div className={situation == "lots" ? "post notsolo" : "post"}>
       <div className="top">
         <ul className="rating">
           <li className="arrow">
@@ -24,7 +23,10 @@ export default function Post({ post }) {
             <i className="fa-solid fa-arrow-down"></i>
           </li>
         </ul>
-        <h2 className={imageUrlRegex.test(post.url) ? "title" : "main_title"}>
+        <h2
+          onClick={situation == "lots" ? onClick : () => {}}
+          className={imageUrlRegex.test(post.url) ? "title" : "main_title"}
+        >
           {post.title}
         </h2>
       </div>

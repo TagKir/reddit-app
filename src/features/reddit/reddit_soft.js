@@ -15,3 +15,13 @@ export const searchPosts = createAsyncThunk(
     return answer.data.children;
   }
 );
+
+export const searchComments = createAsyncThunk(
+  "comments/searchComments",
+  async (item) => {
+    const encoded = encodeURI(`https://www.reddit.com/comments/${item}.json`);
+    const response = await fetch(encoded);
+    const answer = await response.json();
+    return answer[1].data.children;
+  }
+);

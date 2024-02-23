@@ -1,5 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { popular, searchPosts } from "../reddit/reddit_soft.js";
+import {
+  popular,
+  searchPosts,
+  searchComments,
+} from "../features/reddit/reddit_soft.js";
 
 export const postSlice = createSlice({
   name: "posts",
