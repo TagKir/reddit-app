@@ -1,7 +1,7 @@
 import React from "react";
 import "./postPage.css";
 import Post from "../print/post_print";
-import Comments from "../../comments/comments";
+import Comments from "../../comments/comments_work/comments_work";
 import { selectPosts } from "../../../store/postSlice";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";

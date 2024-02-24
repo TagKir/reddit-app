@@ -12,7 +12,10 @@ export default function Post({ post, situation }) {
   };
 
   return (
-    <div className={situation == "lots" ? "post notsolo" : "post"}>
+    <div
+      className={situation == "lots" ? "post notsolo" : "post"}
+      onClick={situation == "lots" ? onClick : () => {}}
+    >
       <div className="top">
         <ul className="rating">
           <li className="arrow">
@@ -23,10 +26,7 @@ export default function Post({ post, situation }) {
             <i className="fa-solid fa-arrow-down"></i>
           </li>
         </ul>
-        <h2
-          onClick={situation == "lots" ? onClick : () => {}}
-          className={imageUrlRegex.test(post.url) ? "title" : "main_title"}
-        >
+        <h2 className={imageUrlRegex.test(post.url) ? "title" : "main_title"}>
           {post.title}
         </h2>
       </div>
@@ -44,9 +44,7 @@ export default function Post({ post, situation }) {
         <p>{calculateDifference(post.created)}</p>
         <div className="comments">
           <i className="fa-regular fa-comments"></i>
-          <p>
-            <a href="http://randomcolour.com">{post.num_comments}</a>
-          </p>
+          <p>{post.num_comments}</p>
         </div>
       </div>
     </div>

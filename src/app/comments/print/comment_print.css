@@ -1,0 +1,30 @@
+.Ccomments {
+  text-align: center;
+}
+.Ccomment {
+  display: grid;
+  max-width: 800px;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  margin: 40px 0;
+}
+.Cauthor {
+  justify-self: left;
+  font-weight: bold;
+  text-wrap: nowrap;
+}
+.Cdata {
+  align-self: center;
+  font-size: 12px;
+}
+.Crating {
+  display: flex;
+  padding-left: 20;
+  max-width: 90px;
+  justify-content: space-evenly;
+}
+.Cbody {
+  grid-column: 1/5;
+  justify-self: left;
+  font-size: 16px;
+}

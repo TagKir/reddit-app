@@ -25,3 +25,10 @@ export const searchComments = createAsyncThunk(
     return answer[1].data.children;
   }
 );
+
+export const getUsers = createAsyncThunk("users", async (item) => {
+  const encoded = encodeURI(`https://www.reddit.com/user/${item}.json`);
+  const response = await fetch(encoded);
+  const answer = await response.json();
+  return answer;
+});
