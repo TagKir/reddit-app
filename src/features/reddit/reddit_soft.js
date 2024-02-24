@@ -30,5 +30,5 @@ export const getUsers = createAsyncThunk("users", async (item) => {
   const encoded = encodeURI(`https://www.reddit.com/user/${item}.json`);
   const response = await fetch(encoded);
   const answer = await response.json();
-  return answer;
+  return answer.data;
 });

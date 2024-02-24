@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./postPage.css";
 import Post from "../print/post_print";
 import Comments from "../../comments/comments_work/comments_work";
@@ -11,6 +11,7 @@ export default function PostPage() {
   const { postId } = useParams();
   const posts = useSelector(selectPosts);
   const post = posts.find((p) => p.data.id === postId);
+
   return (
     <div className="postPage">
       <button className="back" onClick={() => navigate("/")}>
@@ -19,7 +20,7 @@ export default function PostPage() {
       {post ? (
         <Post post={post.data} />
       ) : (
-        <div className="loading">...Loading</div>
+        <div className="loading">Loading...</div>
       )}
       <Comments id={postId} />
     </div>

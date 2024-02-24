@@ -2,17 +2,15 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getUsers } from "../features/reddit/reddit_soft.js";
 
 export const usersSlice = createSlice({
-  name: "posts",
+  name: "users",
   initialState: [],
   reducers: {},
   extraReducers: (builder) => {
-    builder
-      .addCase(getUsers) //
-      .addCase(searchPosts.pending, (state) => {
-        return "";
-      });
+    builder.addCase(getUsers.fulfilled, (state, action) => {
+      return action.payload;
+    });
   },
 });
-export const selectPosts = (state) => state.posts;
+export const selectUsers = (state) => state.users;
 
 export default usersSlice.reducer;

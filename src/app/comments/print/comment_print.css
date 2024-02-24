@@ -16,6 +16,7 @@
 .Cdata {
   align-self: center;
   font-size: 12px;
+  margin-left: 20px;
 }
 .Crating {
   display: flex;
