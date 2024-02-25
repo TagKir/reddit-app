@@ -46,6 +46,9 @@ function App() {
                 </div>
               }
             />
+            <Route path="/:userId" element={<div className={styles.App}></div>}>
+              {" "}
+            </Route>
           </Route>
         )
       )}
