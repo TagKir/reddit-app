@@ -3,13 +3,16 @@ import { calculateDifference } from "../../../features/soft/soft";
 import "./comment_print.css";
 import { selectUsers } from "../../../store/usersSlice";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 export default function Comment({ comment }) {
   const user = useSelector(selectUsers);
 
   return (
     <div className="Ccomment" key={comment.data.id}>
-      <p className="Cauthor">{comment.data.author}</p>
+      <p className="Cauthor">
+        <Link to={`/users/${comment.data.author}`}>{comment.data.author}</Link>
+      </p>
       <p className="Cdata">{calculateDifference(comment.data.created)}</p>
       <ul className="Crating">
         <li className="Carrow">

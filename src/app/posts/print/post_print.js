@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./post_print.css";
 import { calculateDifference } from "../../../features/soft/soft";
 
@@ -8,7 +8,9 @@ export default function Post({ post, situation }) {
   const navigate = useNavigate();
 
   const onClick = (e) => {
-    navigate(post.id);
+    if (e.target.href !== `http://localhost:3000/users/${post.author}`) {
+      navigate(`posts/${post.id}`);
+    }
   };
 
   return (
@@ -39,7 +41,7 @@ export default function Post({ post, situation }) {
 
       <div className="nonmain_inf">
         <p>
-          posted by <a href="http://randomcolour.com">{post.author}</a>
+          posted by <Link to={`/users/${post.author}`}>{post.author}</Link>
         </p>
         <p>{calculateDifference(post.created)}</p>
         <div className="comments">

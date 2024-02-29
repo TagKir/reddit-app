@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getUsers } from "../../../features/reddit/reddit_soft";
+import { useParams } from "react-router-dom";
 
-export default function Comments({ id }) {
-  /* const comments = useSelector(selectComments); */
-  const dispatch = useDispatch();
+import { selectUsers } from "../../../store/usersSlice";
+import User from "../print/user_print";
+
+export default function Users() {
+  const comments = useSelector(selectUsers);
+  const { userId } = useParams();
 
   useEffect(() => {
     /* dispatch(searchComments(id)); */
@@ -15,15 +18,8 @@ export default function Comments({ id }) {
   } */
 
   return (
-    <div className="Ccomments">
-      {/* {comments.map((comment) => {
-        return comment.data.author !== "AutoModerator" &&
-          comment.kind == "t1" ? (
-          <Comment comment={comment} key={comment.data.id}></Comment>
-        ) : (
-          ""
-        );
-      })} */}
+    <div className="users">
+      <User />
     </div>
   );
 }

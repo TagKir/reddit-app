@@ -4,6 +4,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
+  Outlet,
 } from "react-router-dom";
 import styles from "./App.module.css";
 import { useDispatch } from "react-redux";
@@ -15,6 +16,7 @@ import PostPage from "./posts/postPage_work/postPage";
 
 // soft
 import { popular } from "../features/reddit/reddit_soft";
+import Users from "./users/users_work/users_work";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,32 +29,42 @@ function App() {
     <RouterProvider
       router={createBrowserRouter(
         createRoutesFromElements(
-          <Route path="/">
+          <Route
+            path="/"
+            element={
+              <div className={styles.App}>
+                <Header />
+                <Outlet />
+              </div>
+            }
+          >
             <Route
               index
               element={
                 <div className={styles.App}>
-                  <Header />
                   <Posts />
                 </div>
               }
             />
             <Route
-              path="/:postId"
+              path="/posts/:postId"
               element={
                 <div className={styles.App}>
-                  <Header />
                   <PostPage />
                 </div>
               }
             />
-            <Route path="/:userId" element={<div className={styles.App}></div>}>
-              {" "}
-            </Route>
+            <Route
+              path="/users/:userId"
+              element={
+                <div className={styles.App}>
+                  <Users />
+                </div>
+              }
+            />
           </Route>
         )
       )}
-      className={styles.App}
     />
   );
 }
