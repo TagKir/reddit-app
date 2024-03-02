@@ -1,13 +1,11 @@
 import React from "react";
 import { calculateDifference } from "../../../features/soft/soft";
 import "./comment_print.css";
-import { selectUsers } from "../../../store/usersSlice";
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectUsers } from "../../../store/usersSlice";
 
 export default function Comment({ comment }) {
-  const user = useSelector(selectUsers);
-
   return (
     <div className="Ccomment" key={comment.data.id}>
       <p className="Cauthor">

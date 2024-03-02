@@ -12,7 +12,7 @@ export default function Comments({ id }) {
     dispatch(searchComments(id));
   }, []);
 
-  if (!Array.isArray(comments)) {
+  if (comments.length === 0) {
     return <div className="loading">Loading...</div>;
   }
 

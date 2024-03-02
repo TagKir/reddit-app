@@ -26,9 +26,21 @@ export const searchComments = createAsyncThunk(
   }
 );
 
-export const getUsers = createAsyncThunk("users", async (item) => {
-  const encoded = encodeURI(`https://www.reddit.com/user/${item}.json`);
-  const response = await fetch(encoded);
-  const answer = await response.json();
-  return answer.data;
+export const getUsers = createAsyncThunk("user", async (item) => {
+  const about_encoded = encodeURI(
+    `https://www.reddit.com/user/${item}/about.json`
+  );
+  const about_response = await fetch(about_encoded);
+  const about = await about_response.json();
+
+  const comments_encoded = encodeURI(
+    `https://www.reddit.com/user/${item}/comments.json`
+  );
+  const comments_response = await fetch(comments_encoded);
+  const comments = await comments_response.json();
+
+  return {
+    ...about.data,
+    ...comments.data,
+  };
 });
