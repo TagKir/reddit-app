@@ -13,3 +13,12 @@ header {
   width: 20vw;
   margin-left: 20px;
 }
+.logo:hover {
+  cursor: pointer;
+}
+
+@media (orientation: landscape) {
+  .logo {
+    width: 10vw;
+  }
+}

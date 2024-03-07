@@ -38,6 +38,19 @@ export default function Post({ post, situation }) {
       ) : (
         ""
       )}
+      {post.media !== null ? (
+        <video
+          src={post.media.reddit_video.fallback_url}
+          width="80%"
+          autoplay="autoplay"
+          muted="muted"
+          controls
+        >
+          Ваш браузер не поддерживает тег <code>video</code>
+        </video>
+      ) : (
+        ""
+      )}
 
       <div className="nonmain_inf">
         <p>
