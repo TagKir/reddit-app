@@ -38,7 +38,7 @@ export default function Post({ post, situation }) {
       ) : (
         ""
       )}
-      {post.media !== null ? (
+      {post.is_video === true ? (
         <video
           src={post.media.reddit_video.fallback_url}
           width="80%"
