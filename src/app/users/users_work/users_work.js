@@ -21,7 +21,6 @@ export default function Users() {
 
   return (
     <div className="users">
-      WORK IN PROGRESS
       <User user={user} />
     </div>
   );

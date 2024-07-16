@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./postPage.css";
+import "./postPage.scss";
 import Post from "../print/post_print";
 import Comments from "../../comments/comments_work/comments_work";
 import { selectPosts } from "../../../store/postSlice";

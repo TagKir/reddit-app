@@ -1,21 +1,29 @@
 .user {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  margin-top: 20px;
 }
 .user_info {
-  width: 80%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 .avatar {
   width: 100px;
-  justify-self: right;
-  align-items: end;
-  grid-row: 1/3;
+}
+.name {
+  font-weight: 700;
+  font-size: 70px;
 }
 .name,
 .time {
-  justify-self: left;
   margin: 0;
+}
+.newline {
+  display: block;
+  width: 100%;
+  height: 0px;
+}
+
+.comments {
+  margin-top: 100px;
 }
